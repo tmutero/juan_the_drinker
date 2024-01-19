@@ -70,7 +70,7 @@ To set up and run the app, please follow these steps:
 ## System Architecture
 1. Er Diagram of Database Tables
 
-<img src="https://raw.githubusercontent.com/born-ideas/masterpass/master/assets/screenshot_3.jpeg" width="200" alt="Screenshot 3" />
+<img src="https://github.com/tmutero/juan_the_drinker/blob/master/static/er_diagram.png" width="500" alt="Screenshot 3" />
 
 ## System Flow
 Add all required data in following endpoints
