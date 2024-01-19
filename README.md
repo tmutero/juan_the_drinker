@@ -81,4 +81,4 @@ Add all required data in following endpoints
 4. Visit
 
 
-# ENJOY AND GOOD LUCK WITH YOUR PROJECT! 🧬 🚀
+# 🧬 🚀
