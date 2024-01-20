@@ -37,7 +37,11 @@ class StockService:
     async def get_all_stocks(session: AsyncSession) -> list[StockOut]:
         all_bars = await stock.StockDao(session).get_all()
         return all_bars
-
+    
+    @staticmethod
+    async def get_all_stock_by_bar_id( bar_id: int,session: AsyncSession) -> list[StockOut]:
+        all_bars = await stock.StockDao(session).get_stock_by_bar_id(bar_id)
+        return all_bars
 
     @staticmethod
     async def get_stock_by_id(stock_id: int, session: AsyncSession) -> StockOut:

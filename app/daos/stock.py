@@ -22,7 +22,7 @@ class StockDao(BaseDao):
         return await self.session.scalar(statement=statement)
     
     
-    async def get_stock_by_bar_id(self, bar_id: int) -> Stock | None:
+    async def get_stock_by_bar_id(self, bar_id: int) -> list[Stock] | None:
         statement = select(Stock).where(Stock.bar_id == bar_id)
         result = await self.session.execute(statement=statement)
         return result.scalars().all()
@@ -35,6 +35,7 @@ class StockDao(BaseDao):
         statement = select(Stock).order_by(Stock.stock_id)
         result = await self.session.execute(statement=statement)
         return result.scalars().all()
+
 
     async def delete_all(self) -> None:
         await self.session.execute(delete(Stock))

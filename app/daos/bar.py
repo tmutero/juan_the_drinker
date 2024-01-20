@@ -19,7 +19,6 @@ class BarDao(BaseDao):
     
 
     async def get_by_id(self, bar_id: int) -> Bar | None:
-        # statement = select(Bar).where(Bar.bar_id == bar_id)
         statement = select(Bar).where(Bar.bar_id == bar_id).options(selectinload(Bar.stock)).order_by(Bar.bar_id)
 
         return await self.session.scalar(statement=statement)

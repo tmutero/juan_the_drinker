@@ -31,6 +31,11 @@ async def get_all_stocks(session: AsyncSession = Depends(get_session)) -> list[S
     return await StockService.get_all_stocks(session)
 
 
+@router.get("/get_all_stock_by_bar_id/{bar_id}", status_code=status.HTTP_200_OK)
+async def get_all_stock_by_bar_id(bar_id: int, session: AsyncSession = Depends(get_session)) -> list[StockOut]:
+    return await StockService.get_all_stock_by_bar_id(bar_id, session)
+
+
 @router.delete("/delete_by_id/{stock_id}", status_code=status.HTTP_200_OK)
 async def delete_stock_by_id(
     stock_id: int,
